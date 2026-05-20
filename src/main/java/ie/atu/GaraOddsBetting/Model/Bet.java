@@ -14,6 +14,7 @@ public class Bet {
     private double amount;
     private double odds;
     private double potentialWinnings;
+    private String category;
 
     // WON or LOST
     private String status;
