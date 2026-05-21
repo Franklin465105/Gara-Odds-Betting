@@ -30,7 +30,11 @@ public class BettingService {
         }
 
         // deducts the stake from the users balance
-        garaOddsClient.withdraw(username, amount);
+        try {
+            garaOddsClient.withdraw(username, amount);
+        } catch (Exception e) {
+            throw new RuntimeException("Insufficient funds");
+        }
 
         boolean won = random.nextBoolean();
 
